@@ -32,3 +32,24 @@ def add_data(existing_df, new_df):
     combined_df = pd.concat([existing_df, new_df])
     return combined_df
 
+def del_duplicates(df):
+    """Löschen vollständig identischer Datensätze
+    >>> importer.del_duplicates(combined_df)
+    """
+    df.dropna()
+    return df
+
+def show_duplicated_usernames(df):
+    """Anzeigen aller identischen Datensätze
+    >>> importer.show_duplicated_usernames(combined_df)
+    """
+    if "user_name" in combined_customers.columns:
+        return df[df["user_name"].duplicated()]
+    else:
+        print("Die Spalte 'user_name' ist nicht vorhanden.")
+
+
+if __name__ == "__main__":
+    check_shape(customers)
+    check_shape(new_customers)
+    add_data(customers, new_customers)
