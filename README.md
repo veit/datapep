@@ -73,3 +73,7 @@ Den Funktionen `fuzz.ratio()`, `fuzz.partial_ratio` und `fuzz.token_set_ratio` w
 >>> fuzz.token_set_ratio("Berlin, Deutschland", "Berlin, Germany")
 62
 ```
+
+#### Ähnliche Datensätze finden
+
+Siehe [Dedupe](https://www.python4data.science/de/latest/clean-prep/deduplicate.html#3.-Dedupe)
