@@ -35,6 +35,9 @@ Hello from dataprep!
 ```
 
 ### in Python
+
+#### Daten importieren
+
 ```console
 > uv run python
 ```
@@ -55,4 +58,18 @@ Hello from dataprep!
 2079       Ryan Thompson  ...         cnewton
 
 [2080 rows x 8 columns]
+```
+
+#### Wortähnlichkeiten finden
+
+Den Funktionen `fuzz.ratio()`, `fuzz.partial_ratio` und `fuzz.token_set_ratio` werden zwei Zeichenketten als Parameter übergeben, z.B.:
+
+```python
+>>> from fuzzywuzzy import fuzz
+>>> fuzz.ratio("Berlin, Deutschland", "Berlin, Germany")
+65
+>>> fuzz.partial_ratio("Berlin, Deutschland", "Berlin, Germany")
+60
+>>> fuzz.token_set_ratio("Berlin, Deutschland", "Berlin, Germany")
+62
 ```
